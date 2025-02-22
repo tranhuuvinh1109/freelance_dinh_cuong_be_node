@@ -27,7 +27,7 @@ const getDataSheet = (file, sheet) => {
     return { message: `An error occurred: ${error.message}` };
   }
 };
-async function insertDataIntoExcel(filePath, columns, jsonData) {
+async function insertDataIntoExcel(filePath, columns, jsonData, res) {
   try {
     const workbook = new ExcelJS.Workbook();
     const worksheet = workbook.addWorksheet("Sheet1");
@@ -43,8 +43,14 @@ async function insertDataIntoExcel(filePath, columns, jsonData) {
       worksheet.addRow(value);
     });
 
-    await workbook.xlsx.writeFile(filePath);
-    console.log(`Excel file created successfully at ${filePath}`);
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader("Content-Disposition", `attachment; filename=${filePath}`);
+
+    await workbook.xlsx.write(res);
+    res.end();
   } catch (error) {
     console.error("Error creating Excel file:", error);
   }

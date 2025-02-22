@@ -17,20 +17,12 @@ class DownloadController {
           "location date address cable_line name_staff phone_staff result plan description construction_unit_information affect"
         );
 
-      console.log("....", mediaInstances.length);
-
-      const filePath = path.join(__dirname, EXCEL_PATH, PLAN_EXCEL_FILE);
-
-      await helper.clearDataSheet(filePath, "Sheet1", 2);
-      await helper.insertDataIntoExcel(filePath, PLAN_HEADER, mediaInstances);
-
-      const fileData = fs.readFileSync(filePath);
-      res.setHeader("Content-Type", "application/vnd.ms-excel");
-      res.setHeader(
-        "Content-Disposition",
-        `attachment; filename=${PLAN_EXCEL_FILE}`
+      await helper.insertDataIntoExcel(
+        PLAN_EXCEL_FILE,
+        PLAN_HEADER,
+        mediaInstances,
+        res
       );
-      res.send(fileData);
     } catch (error) {
       console.error("File download failed:", error);
       res.status(404).send("<h1>File not exist</h1>");
