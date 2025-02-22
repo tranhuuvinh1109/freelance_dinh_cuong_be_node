@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "92f3953f-e919-4d6e-a99a-18313df63406",
+		"name": "Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "17360124"
+	},
+	"item": [
+		{
+			"name": "Sign-up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"admin\",\r\n  \"email\": \"Admin@gmail.com\",\r\n  \"password\": \"tbeauty@admin\",\r\n  \"gender\": 0,\r\n  \"address\": \"2114 Senter Rd Ste 12 San Jose, CA 95112\",\r\n  \"phone\": \"408 646 6147\",\r\n  \"type\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/auth/sign-up"
+			},
+			"response": []
+		},
+		{
+			"name": "Sign-in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"Admin@gmail.com\",\r\n  \"password\": \"tbeauty@admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/auth/sign-in"
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh-token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Njc4ZjkzMmZmNzE0YjcwZjc0ZDViZiIsImlhdCI6MTczNDg0MDQ4OSwiZXhwIjoxNzQyNjE2NDg5fQ.JknIGgX4iFB0be146q6xKp9M5D2C_7WUhPC8kAdN8Js\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/auth/refresh-token"
+			},
+			"response": []
+		},
+		{
+			"name": "Get my profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": ""
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/auth/my-profile"
+			},
+			"response": []
+		}
+	]
+}

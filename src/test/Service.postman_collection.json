@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "f7f25a3d-4f94-4f3d-ab2f-1ce1d9c619bc",
+		"name": "Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "17360124"
+	},
+	"item": [
+		{
+			"name": "Get all service",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}/service"
+			},
+			"response": []
+		},
+		{
+			"name": "Get service by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}/service/67678cf584038a25596998a2"
+			},
+			"response": []
+		},
+		{
+			"name": "Create new service",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Personal Training\",\r\n  \"description\": \"One-on-one personal training sessions tailored to individual fitness goals.\",\r\n  \"price\": \"50\",\r\n  \"discount\": 10,\r\n  \"image\": \"https://example.com/images/personal-training.jpg\",\r\n  \"category\": \"67678ab39bd4ae7afb38f8c0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/service/"
+			},
+			"response": []
+		},
+		{
+			"name": "Detele service",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Health & Wellness2\",\r\n  \"description\": \"Services related to health, fitness, and well-being\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/service/67678cf584038a25596998a2"
+			},
+			"response": []
+		},
+		{
+			"name": "Update service",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Personal Training 22\",\r\n  \"description\": \"One-on-one personal training sessions tailored to individual fitness goals.\",\r\n  \"price\": \"50\",\r\n  \"discount\": 10,\r\n  \"image\": \"https://example.com/images/personal-training.jpg\",\r\n  \"category\": \"67678ab39bd4ae7afb38f8c0\",\r\n  \"is_show\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/service/67678cf584038a25596998a2"
+			},
+			"response": []
+		}
+	]
+}

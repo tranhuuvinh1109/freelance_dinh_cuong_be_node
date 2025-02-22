@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "d4d302c4-e906-4c09-9f68-99c91fe3c37c",
+		"name": "Category",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "17360124"
+	},
+	"item": [
+		{
+			"name": "Get-all-category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}/category/"
+			},
+			"response": []
+		},
+		{
+			"name": "Get category by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}/category/67678ab39bd4ae7afb38f8c"
+			},
+			"response": []
+		},
+		{
+			"name": "Create new category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Health\",\r\n  \"description\": \"Services related to\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/category/"
+			},
+			"response": []
+		},
+		{
+			"name": "Update category",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Health 222\",\r\n  \"description\": \"Services related to health, fitness, and well-being\",\r\n  \"is_show\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/category/67678cd084038a255969989c"
+			},
+			"response": []
+		},
+		{
+			"name": "Detele category",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Health & Wellness2\",\r\n  \"description\": \"Services related to health, fitness, and well-being\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/category/67678cd084038a255969989c"
+			},
+			"response": []
+		}
+	]
+}
